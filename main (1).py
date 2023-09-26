@@ -1,10 +1,16 @@
-def fact(n):
-  if(n==0):
-    return (1)
-  else:
-    return (n*fact(n-1))
+"""Write a function called linear_search_product that takes the list of products and a target product name as input. The function should perform a linear search to find the target product in the list and return a list of indices of all occurrences of the product if found, or an empty list if the product is not found."""
 
+def linearSearchProduct(productList, targetProduct):
+  indices = []
 
-m=int(input("Enter n:"))
-R=fact(m)
-print(R)
+  for index, product in enumerate(productList):
+    if product == targetProduct:
+      indices.append(index)
+
+  return indices
+
+#example usage:
+products = ["Shoes" , "boat" , "loafer", "Shoes" , "Sandal" , "Shoes"]
+target="Shoes"
+result = linearSearchProduct(products, target)
+print(result)
